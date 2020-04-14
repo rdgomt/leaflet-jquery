@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>GeoJSON w/ leaflet.ajax</title>
+
+<link rel="stylesheet" href="fontello/css/fontello.css">
+<link rel="stylesheet" href="leaflet.css" />
+<link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css">
+<!-- <link rel="stylesheet" href="plugins/fullscreen/Control.FullScreen.css"> -->
+
+<link rel="stylesheet" href="style.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="leaflet.js"></script>
+<script src="leaflet.ajax.js"></script>
+<!-- <script src="plugins/fullscreen/Control.FullScreen.js"></script> -->
+<!-- <script src="https://unpkg.com/geojson-vt@3.0.0/geojson-vt.js"></script> -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script> -->
+<!-- <script src="plugins/omnivore/leaflet-omnivore.min.js"></script> -->
+<script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
+<!-- <script src="plugins/turf/turf_area_buffer_intersect.min.js"></script> -->
+
+<script src="plugins/search/dist/leaflet-search.min.js"></script>
+<link rel="stylesheet" href="plugins/search/dist/leaflet-search.min.css" />
+
+</head>
+
+<body>
+	<div id="sidebar">
+		<div class="sliders-container">
+			<div class="sliders-item">
+				<input type="checkbox" id="checkEstado" checked> Estado
+				<div id="estadoSlider" class="slider"></div>
+			</div>
+			<div class="sliders-item">
+				<input type="checkbox" id="checkBiomas"> Biomas
+				<div id="biomasSlider" class="slider"></div>
+			</div>
+			<div class="sliders-item">
+				<input type="checkbox" id="checkMun"> Municípios
+				<div id="munSlider" class="slider"></div>
+			</div>
+		</div>
+		<div id="legenda">
+			<div id="lgndEstado" class="lgnd-item">
+				<div class="lgnd-layer-title">Estado</div>
+				<div class="lgnd-subitem">
+					<div class="lgnd-svg">
+						<svg width="15" height="15">
+							<rect width="15" height="15" style="fill: transparent; stroke: #4d4d4d; stroke-width: 2"/>
+						</svg>
+					</div>
+					<div class="lgnd-subitem-title">Rio Grande do Sul</div>						
+				</div>					
+			</div>			
+			<div id="lgndBiomas" class="lgnd-item" style="display: none">
+				<div class="lgnd-layer-title">Biomas</div>
+				<div class="lgnd-subitem">
+					<div class="lgnd-svg">
+						<svg width="15" height="15">
+							<rect width="15" height="15" style="fill: #ffeda0;"/>
+						</svg>
+					</div>
+					<div class="lgnd-subitem-title">Pampa</div>						
+				</div>
+				<div class="lgnd-subitem">
+						<div class="lgnd-svg">
+							<svg width="15" height="15">
+								<rect width="15" height="15" style="fill: #009933;"/>
+							</svg>
+						</div>
+						<div class="lgnd-subitem-title">Mata Atlântica</div>						
+					</div>
+			</div>
+			<div id="lgndMunicípios" class="lgnd-item" style="display: none">
+				<div class="lgnd-layer-title">Municípios</div>
+				<div class="lgnd-svg">
+					<svg width="15" height="15">
+						<rect width="15" height="15" style="fill: transparent; stroke: #999; stroke-width: 2"/>
+					</svg>
+				</div>					
+			</div>	
+		</div>		
+	</div>
+	<div id="map">
+		<div id="coordenadas"></div>
+		<div id="btn-home">
+			<ul><li><a title="Posição inicial" href="#" onClick="defaultZoom()"><i class="icon-home-1"></i></a></li></ul>
+		</div>		
+	</div>
+
+<script type="text/javascript" src="map.js"></script>
+</body>
+</html>
+
